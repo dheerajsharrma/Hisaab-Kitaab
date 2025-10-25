@@ -59,16 +59,18 @@ app.use((error: any, req: express.Request, res: express.Response, next: express.
   });
 });
 
-// Start server
-app.listen(PORT, () => {
-    connectDB()
-  console.log(`
-🚀 Hisaab Kitaab API Server Started!
-📡 Server running on: http://localhost:${PORT}
-🌍 Environment: ${process.env.NODE_ENV || 'development'}
 
-📊 Health Check: http://localhost:${PORT}/api/health
-  `);
-});
+    connectDB()
+
+// Start server
+// app.listen(PORT, () => {
+//   console.log(`
+// 🚀 Hisaab Kitaab API Server Started!
+// 📡 Server running on: http://localhost:${PORT}
+// 🌍 Environment: ${process.env.NODE_ENV || 'development'}
+
+// 📊 Health Check: http://localhost:${PORT}/api/health
+//   `);
+// });
 
 export default app;
