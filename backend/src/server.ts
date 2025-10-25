@@ -11,12 +11,24 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5001
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://hisaab-kitaab-ten.vercel.app'
+];
 
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
-  credentials: true
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.error("Blocked by CORS:", origin);
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
 }));
+
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
