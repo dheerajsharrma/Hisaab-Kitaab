@@ -85,13 +85,13 @@ A full-stack expense tracking application with modern dark UI, dynamic animation
 
 4. **Open your browser**
    - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
+   - Backend API: http://localhost:5001
 
 ### Environment Variables
 
 **Backend (.env)**
 ```env
-PORT=5000
+PORT=5001
 NODE_ENV=development
 MONGODB_URI=mongodb://localhost:27017/expense-tracker
 JWT_SECRET=your_super_secret_jwt_key_here_make_it_long_and_secure
@@ -100,7 +100,7 @@ CLIENT_URL=http://localhost:3000
 
 **Frontend (.env)**
 ```env
-REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_API_URL=http://localhost:5001/api
 GENERATE_SOURCEMAP=false
 ```
 

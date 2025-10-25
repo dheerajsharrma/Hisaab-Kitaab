@@ -39,7 +39,7 @@ if (!name || !email || !password) {
 ## ✅ **Current Project Status:**
 
 ### **Servers Running:**
-- 🟢 **Backend:** http://localhost:5000 (✅ Working)
+- 🟢 **Backend:** http://localhost:5001 (✅ Working)
 - 🟢 **Frontend:** http://localhost:3000 (✅ Working)
 
 ### **APIs Tested and Working:**

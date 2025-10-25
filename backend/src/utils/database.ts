@@ -2,9 +2,9 @@ import mongoose from 'mongoose';
 
 const connectDB = async (): Promise<void> => {
   try {
-    const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/expense-tracker';
+    const mongoURI = process.env.MONGODB_URI || 'hii_fucK_u_bitch';
     
-    await mongoose.connect(mongoURI);
+    await mongoose.connect(mongoURI)
     
     console.log('✅ MongoDB Connected Successfully');
   } catch (error) {
