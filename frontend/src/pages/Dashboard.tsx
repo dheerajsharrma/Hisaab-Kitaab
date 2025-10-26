@@ -215,29 +215,37 @@ const Dashboard: React.FC = () => {
           initial="hidden"
           animate="visible"
           whileHover="hover"
-          className="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-dark-600 card-hover"
+          className="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-dark-600 flex flex-col justify-between h-full transition-transform duration-200 hover:scale-[1.03]"
         >
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Borrowing/Lending</p>
-              <div className="flex space-x-2 mt-1">
-                <span className="text-lg font-bold text-orange-600">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            {/* Left Side: Text */}
+            <div className="flex-1 min-w-[60%]">
+              <p className="text-gray-600 dark:text-gray-400 text-sm font-medium break-words">
+                Borrowing / Lending
+              </p>
+
+              <div className="flex flex-wrap items-center gap-1 mt-1">
+                <span className="text-lg font-bold text-orange-600 break-words">
                   ${dashboardData?.borrowing.total || 0}
                 </span>
                 <span className="text-gray-400">/</span>
-                <span className="text-lg font-bold text-purple-600">
+                <span className="text-lg font-bold text-purple-600 break-words">
                   ${dashboardData?.lending.total || 0}
                 </span>
               </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 break-words">
                 Pending settlements
               </p>
             </div>
-            <div className="p-3 bg-purple-100 dark:bg-purple-900/20 rounded-full">
-              <Users className="w-6 h-6 text-purple-600" />
+
+            {/* Right Side: Icon */}
+            <div className="shrink-0 p-3 bg-purple-100 dark:bg-purple-900/20 rounded-full flex items-center justify-center sm:p-3 p-2">
+              <Users className="w-6 h-6 sm:w-6 sm:h-6 w-5 h-5 text-purple-600" />
             </div>
           </div>
         </motion.div>
+
       </div>
 
       {/* Recent Transactions */}
